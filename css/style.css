@@ -1,0 +1,101 @@
+/* Globálne nastavenie tmavého minimalistického dizajnu */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0d0c;
+  color: #e8e6df;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+a { color: inherit; text-decoration: none; }
+em { font-style: italic; font-family: Georgia, serif; color: #e8e6df; }
+.mute { color: #7a7c75; }
+.kicker { display: flex; align-items: center; gap: 14px; font-family: monospace; font-size: 11px; text-transform: uppercase; color: #7a7c75; margin-bottom: 28px; }
+.kicker .line { flex: 1; height: 1px; background: #22241f; }
+
+h1, h2, h3 { font-weight: 500; color: #e8e6df; margin: 0; }
+h1 { font-size: 52px; line-height: 1.1; margin-bottom: 28px; }
+h2 { font-size: 38px; margin-bottom: 36px; }
+h3 { font-size: 24px; margin-bottom: 8px; }
+p { color: #c8c6bf; margin: 0 0 12px; }
+.lede { font-size: 18px; max-width: 650px; }
+
+/* ───── Navigácia ───── */
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 20px 28px;
+  border-bottom: 1px solid #22241f;
+  font-family: monospace;
+  font-size: 12px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.brand .dot { width: 8px; height: 8px; background: #b4ff39; border-radius: 50%; }
+.nav nav { display: flex; gap: 22px; margin-left: 18px; }
+.nav nav a { color: #7a7c75; }
+.nav nav a:hover { color: #b4ff39; }
+.nav .meta { margin-left: auto; color: #7a7c75; }
+.pulse { width: 7px; height: 7px; border-radius: 50%; background: #b4ff39; display: inline-block; margin-right: 5px; }
+
+/* ───── Hero sekcia & Terminál ───── */
+.hero { padding: 80px 0; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: start; margin-top: 30px; }
+
+.hero-terminal { background: #08090a; border: 1px solid #22241f; border-radius: 8px; font-family: monospace; font-size: 13px; color: #bdbcb6; overflow: hidden; }
+.term-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #111312; border-bottom: 1px solid #22241f; font-size: 11px; color: #7a7c75; }
+.term-bar span { width: 10px; height: 10px; border-radius: 50%; background: #22241f; }
+.term-bar span:nth-child(1) { background: #5a5d54; }
+.term-bar .path { margin-left: auto; }
+.hero-terminal pre { margin: 0; padding: 18px 20px; line-height: 1.75; }
+.hero-terminal .green { color: #b4ff39; }
+
+/* ───── Počítadlá (Counters) ───── */
+.counters { margin-top: 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1px solid #22241f; padding-top: 28px; }
+.counters div { display: flex; flex-direction: column; gap: 4px; }
+.counters b { font-family: Georgia, serif; font-weight: 400; font-size: 40px; color: #e8e6df; }
+.counters span { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #7a7c75; }
+
+/* ───── Sekcie & Zoznam projektov (Work) ───── */
+.section { padding: 80px 0; border-top: 1px solid #22241f; }
+.section.alt { background: #111312; }
+
+.work { list-style: none; margin: 0; padding: 0; }
+.work li { display: grid; grid-template-columns: 60px 1fr 160px; gap: 32px; align-items: start; padding: 24px 0; border-top: 1px solid #22241f; }
+.work li:last-child { border-bottom: 1px solid #22241f; }
+.work .n { font-family: monospace; font-size: 12px; color: #7a7c75; padding-top: 6px; }
+.tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { font-family: monospace; font-size: 11px; padding: 3px 8px; border: 1px solid #22241f; border-radius: 999px; color: #7a7c75; }
+.work .year { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #7a7c75; text-align: right; padding-top: 8px; }
+
+/* ───── Technológie (Grid-2 Tabuľka) ───── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #22241f; border: 1px solid #22241f; margin-top: 20px; }
+.tech-card { background: #0c0d0c; padding: 34px 32px; }
+.svc-cmd { font-family: monospace; font-size: 12px; color: #b4ff39; margin-bottom: 14px; }
+.grid-2 ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: monospace; font-size: 13px; color: #7a7c75; }
+.grid-2 ul li::before { content: "▸ "; color: #b4ff39; }
+.inspirations { margin-top: 40px; font-size: 15px; color: #7a7c75; }
+
+/* ───── Kontakt & Tlačidlo ───── */
+.contact { padding: 80px 0; }
+.btn { display: inline-block; padding: 14px 22px; background: #e8e6df; color: #0c0d0c; font-family: monospace; font-size: 13px; font-weight: bold; border-radius: 4px; margin-top: 15px; }
+.btn:hover { background: #b4ff39; }
+
+/* ───── Footer ───── */
+footer { border-top: 1px solid #22241f; padding: 26px 0; display: flex; justify-content: space-between; font-family: monospace; font-size: 11px; color: #7a7c75; }
+
+/* ───── Mobilná responzivita ───── */
+@media (max-width: 800px) {
+  .nav nav, .nav .meta { display: none; }
+  .hero-grid, .grid-2 { grid-template-columns: 1fr; gap: 28px; }
+  .counters { grid-template-columns: repeat(2, 1fr); }
+  .work li { grid-template-columns: 36px 1fr; gap: 16px; }
+  .work .year { grid-column: 2; text-align: left; padding-top: 0; }
+  h1 { font-size: 36px; }
+}

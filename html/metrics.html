@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lorem.ipsum — metrics.sys</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="/css/metrics.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>matus<span class="mute">.krivanik</span></span>
+    </div>
+    <nav>
+      <a href="./index.html">dashboard</a>
+      <a href="metrics.html" style="color: #b4ff39;">metrics.sys</a>
+    </nav>
+    <div class="meta">
+      <span class="status"><span class="pulse"></span> node_online · 2026</span>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="kicker">
+        <span>§ 02 — system_monitoring</span>
+        <span class="line"></span>
+        <span>node_status · stable</span>
+      </div>
+
+      <h1>
+        Lab <em>Performance</em> &<br>
+        Infrastructure Metrics
+      </h1>
+
+      <div class="counters">
+        <div><b>99.95%</b><span>Host Uptime</span></div>
+        <div><b>06</b><span>Active Containers</span></div>
+        <div><b>02</b><span>Hypervisors</span></div>
+        <div><b>412 GB</b><span>RAM Allocated</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">
+        <span>§ 02.1 — cluster_nodes</span>
+        <span class="line"></span>
+        <span>hardware_allocation</span>
+      </div>
+      <h2>Active Lab Infrastructure</h2>
+      
+      <table class="system-table">
+        <thead>
+          <tr>
+            <th>Node ID</th>
+            <th>Service Target / Environment</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>CPU / Core Load</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mute">#01-PVE</td>
+            <td><strong>proxmox_ve_core_host</strong></td>
+            <td style="color: #b4ff39;">● ONLINE</td>
+            <td>742h 18m</td>
+            <td>
+              <span>38%</span>
+              <div class="progress-bg"><div class="progress-fill" style="width: 38%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mute">#02-DKR</td>
+            <td><strong>docker_container_runtime</strong></td>
+            <td style="color: #b4ff39;">● ONLINE</td>
+            <td>184h 05m</td>
+            <td>
+              <span>15%</span>
+              <div class="progress-bg"><div class="progress-fill" style="width: 15%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mute">#03-SIM</td>
+            <td><strong>verilator_simulation_bench</strong></td>
+            <td style="color: #b4ff39;">● ONLINE</td>
+            <td>12h 43m</td>
+            <td>
+              <span>84%</span>
+              <div class="progress-bg"><div class="progress-fill" style="width: 84%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mute">#04-SRV</td>
+            <td><strong>local_gitea_repository_node</strong></td>
+            <td style="color: #7a7c75;">○ STANDBY</td>
+            <td>0h 00m</td>
+            <td>
+              <span class="mute">0%</span>
+              <div class="progress-bg"><div class="progress-fill" style="width: 0%; background: #7a7c75;"></div></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© 2026 Matúš Krivánik — Lab Infrastructure</div>
+    <div class="mute">v1.0.4-build</div>
+  </footer>
+
+</body>
+</html>
+</html>

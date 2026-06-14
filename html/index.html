@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matúš Krivánik — Systems & Hardware Developer</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>matus<span class="mute">.krivanik</span></span>
+    </div>
+    <nav>
+      <a href="#o-mne">about_me</a>
+      <a href="#projekty">projects</a>
+      <a href="#tech-stack">tech_stack</a>
+      <a href="../html/login.html">login</a>
+    </nav>
+    <div class="meta">
+      <span class="status"><span class="pulse"></span> mk_core · stable_node</span>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section id="o-mne" class="hero">
+      <div class="kicker">
+        <span>§ 00 — identity_dump</span>
+        <span class="line"></span>
+        <span>age · 17.00°years</span>
+      </div>
+
+      <h1>
+        Matúš Krivánik: <em>Systems & Hardware</em><br>
+        Development Portfolio.
+      </h1>
+
+      <div class="hero-grid">
+        <p class="lede">
+          Mám 17 rokov a špecializujem sa na <strong>nízkoúrovňové programovanie, serverové technológie</strong> a hardvérový vývoj. 
+        </p>
+
+        <div class="hero-terminal">
+          <div class="term-bar">
+            <span></span><span></span><span></span>
+            <span class="path">~/matus_krivanik</span>
+          </div>
+          <pre><span>›</span> whoami
+<span class="green">matus_krivanik</span> — systems & hardware engineer
+<span>›</span> cat core_interests.txt
+<span class="green">●</span> low_level_programming (C/C++, Rust, ASM)
+<span class="green">●</span> hardware_description_languages (Verilog)
+<span class="green">●</span> bare_metal_dev & server_infrastructure
+<span>›</span> █</pre>
+        </div>
+      </div>
+
+      <div class="counters">
+        <div><b>04</b><span>Core Langs (C/C++/Rust/ASM)</span></div>
+        <div><b>02</b><span>HDLs (Verilog/SysVerilog)</span></div>
+        <div><b>04</b><span>Sys / Devops Tools</span></div>
+        <div><b>02</b><span>Total Projects</span></div>
+      </div>
+    </section> 
+
+    <section id="projekty" class="section">
+      <div class="kicker">
+        <span>§ 01 — repository_files</span>
+        <span class="line"></span>
+        <span>development_targets</span>
+      </div>
+      <h2>Selected Projects</h2>
+
+      <ul class="work">
+        <li>
+          <span class="n">01</span>
+          <div>
+            <h3>Hardware Core & RTL Design</h3>
+            <p>Komplexný hardvérový projekt. Zameriava sa na návrh digitálnej logiky a architektúry procesora vo Verilogu. Verifikácia a simulácia prebieha pomocou nástroja <strong>Verilator</strong>, kde je RTL kód kompilovaný do C++ modelov pre pokročilé testovanie (C++ Testbench).</p>
+            <div class="tags"><span>Verilog</span><span>SystemVerilog</span><span>Verilator</span><span>C++ Simulation</span></div>
+          </div>
+          <span class="year">active_dev</span>
+        </li>
+
+        <li>
+          <span class="n">02</span>
+          <div>
+            <h3>8-bit CPU Design From Scratch</h3>
+            <p>Môj prvý komplexný návrh procesorovej architektúry v simulátore Logisim Evolution. Cieľom bolo pochopiť logiku počítačov od základných hradiel až po inštrukčný cyklus. Obsahuje funkčný 8-bitový register file, program counter a inštrukčný dekodér. Inšpirované prácou Bena Eatera a knihou Code od Charlesa Petzolda.</p>
+            <div class="tags"><span>Logisim-Evolution</span><span>Digital-Logic</span><span>ALU</span><span>CPU-Architecture</span></div>
+          </div>
+          <span class="year">archived</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="tech-stack" class="section alt">
+      <div class="kicker">
+        <span>§ 02 — hardware_software_stack</span>
+        <span class="line"></span>
+        <span>supported_technologies</span>
+      </div>
+      <h2>Firmware & Systems Tech Stack</h2>
+
+      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        
+        <div class="tech-card">
+          <div class="svc-cmd">$ ./low-level-software</div>
+          <h3>Software & Systems</h3>
+          <p>Vývoj vysoko optimalizovaného softvéru, systémových nástrojov a testbenchov s priamym prístupom k pamäti.</p>
+          <ul>
+            <li>C / C++</li>
+            <li>Rust</li>
+            <li>Assembly (ASM)</li>
+            <li>POSIX / Linux APIs</li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="svc-cmd">$ ./hardware-description</div>
+          <h3>Hardware & RTL Design</h3>
+          <p>Modelovanie, syntéza a verifikácia digitálnych štruktúr, architektúr procesorov a simulácia obvodov.</p>
+          <ul>
+            <li>Verilog</li>
+            <li>SystemVerilog</li>
+            <li>Verilator</li>
+            <li>Logisim Evolution</li>
+          </ul>
+        </div>
+
+        <div class="tech-card" style="grid-column: span 1;">
+          <div class="svc-cmd">$ ./infrastructure-management</div>
+          <h3>Infrastructure & DevOps</h3>
+          <p>Správa domácich alebo produkčných labov, virtualizácia prostredia a kontajnerizácia služieb.</p>
+          <ul>
+            <li>Linux (Debian / Arch)</li>
+            <li>Proxmox VE</li>
+            <li>Hyper-V</li>
+            <li>Docker Containers</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="inspirations" style="margin-top: 40px;">
+        <strong>Fokus:</strong> Serverové technológie · Kernel Optimization · Embedded Systems · RTL Verification · Bare-metal
+      </p>
+    </section>
+
+    <section id="kontakt" class="section contact">
+      <div class="kicker">
+        <span>§ 03 — network_connection</span>
+        <span class="line"></span>
+        <span>external_endpoints</span>
+      </div>
+      <h2>Get in touch / Check my code</h2>
+      <p class="lede">
+        Ak ťa zaujímajú moje projekty, chceš vidieť zdrojové kódy alebo ma kontaktovať, môžeš ma nájsť na nasledujúcich platformách.
+      </p>
+      
+      <div class="cta" style="display: flex; gap: 15px;">
+        <a class="btn" href="https://github.com/" target="_blank">github_profile →</a>
+        <a class="btn" href="https://linkedin.com/" target="_blank" style="background: transparent; color: #b4ff39; border: 1px solid #b4ff39;">linkedin_profile →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© 2026 Matúš Krivánik — Systems & Hardware Developer</div>
+    <div class="mute">v1.0.0-release</div>
+  </footer>
+
+</body>
+</html>
