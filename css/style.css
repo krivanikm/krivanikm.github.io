@@ -186,6 +186,7 @@ p {
   margin: 0;
   padding: 18px 20px;
   line-height: 1.75;
+  overflow-x: auto;
 }
 
 .hero-terminal .green {
@@ -288,7 +289,7 @@ p {
 }
 
 
-/* --- GRID-2 (Zarovnané od riadku 130) --- */
+/* --- GRID-2 --- */
 
 .grid-2 {
   display: grid;
@@ -413,8 +414,23 @@ footer {
   }
 }
 
+/* Upravená posledná responzivita pre úzke obrazovky */
 @media (max-width: 500px) {
-  body {
-    font-size: 10px;
+  p, .lede, .mute, span, a, footer, .hero-terminal, .grid-2 ul {
+    font-size: 12px; /* Zmenší bežný text tak, aby pretiekol správne a bol čitateľný */
+    word-break: break-word; /* Ochrana proti pretekaniu dlhých slov */
+  }
+
+  .nav nav {
+    gap: 12px; /* Zúženie medzier v menu na mobile */
+  }
+
+  .counters b {
+    font-size: 28px; /* Čísla v počítadlách sa mierne zmenšia */
+  }
+
+  /* Nadpisy zostávajú chránené a zachovajú si proporcie z max-width: 800px */
+  h1, h2, h3 {
+    word-break: break-word;
   }
 }
