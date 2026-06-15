@@ -1,4 +1,4 @@
-/* ───── CSS Koreňové premenné (:root) ───── */
+
 :root {
   --bg-color: #0c0d0c;
   --bg-card: #111312;
@@ -7,12 +7,11 @@
   --text-mute: #7a7c75;
   --border-line: #22241f;
   
-  /* Naša hlavná svietiaca zelená farba pre akcenty */
   --accent-color: #b4ff39; 
   --accent-glow: rgba(180, 255, 57, 0.15);
 }
 
-/* Globálne základy naviazané na tvoj :root */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
@@ -30,7 +29,7 @@ body {
 .fs-7 { font-size: 12px; }
 .text-soft { color: var(--text-soft); }
 
-/* Logo / Brand štýl */
+
 .brand { gap: 10px; font-weight: bold; letter-spacing: -0.05em; font-family: monospace; font-size: 14px; }
 .brand .dot { 
   width: 8px; height: 8px; 
@@ -41,14 +40,14 @@ body {
 
 h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
 
-/* Pravá strana s formulárom */
+
 .login-form-container {
   background-color: var(--bg-color);
   border-left: 1px solid var(--border-line);
   z-index: 2;
 }
 
-/* Úprava ľavej strany s obrázkom */
+
 .left-image-side {
   overflow: hidden;
 }
@@ -67,7 +66,7 @@ h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
   background: linear-gradient(135deg, rgba(12, 13, 12, 0.95), rgba(180, 255, 57, 0.05));
 }
 
-/* Custom terminálové inputy */
+
 .input-group-custom {
   display: flex;
   border: 1px solid var(--border-line);
@@ -98,7 +97,7 @@ h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
   color: var(--text-mute);
 }
 
-/* Oddeľovacia čiara "OR" */
+
 .divider-line {
   height: 1px;
   background: var(--border-line);
@@ -115,7 +114,7 @@ h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
   letter-spacing: 0.1em;
 }
 
-/* Obyčajné terminálové tlačidlá pre Google/Apple */
+
 .btn-terminal-outline {
   display: block;
   background: transparent;
@@ -136,7 +135,7 @@ h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* Form check (Remember me) */
+
 .form-check-custom {
   display: flex;
   align-items: center;
@@ -167,7 +166,7 @@ h3 { font-size: 22px; color: var(--text-main); letter-spacing: -0.02em; }
   top: -2px;
 }
 
-/* Hlavné potvrdzovacie tlačidlo */
+
 .btn-custom {
   display: inline-block;
   padding: 14px 24px;
