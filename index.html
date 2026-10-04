@@ -1,13 +1,285 @@
-<!DOCTYPE html>
-<html lang="sk">
+<!doctype html>
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-        window.location.href = "/html/index.html";
-    </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matúš Krivánik — Systems & Hardware Developer</title>
+  <meta name="description" content="Portfolio of Matúš Krivánik – low-level programming, RTL design and MNPK-01, a custom 8-bit microcomputer." />
+  <meta property="og:title" content="Matúš Krivánik — Systems & Hardware Developer" />
+  <meta property="og:description" content="Low-level programming, RTL design and MNPK-01, a custom 8-bit microcomputer." />
+  <meta property="og:type" content="website" />
+  <script>
+    // jazyk: uložená voľba, inak podľa prehliadača (sk/cs -> SK, ostatné -> EN)
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem("lang"); } catch (e) {}
+      if (lang !== "sk" && lang !== "en") {
+        lang = /^(sk|cs)/i.test(navigator.language || "") ? "sk" : "en";
+      }
+      document.documentElement.setAttribute("data-lang", lang);
+      document.documentElement.lang = lang;
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <p>Ak nedôjde k presmerovaniu, kliknite <a href="/html/index.html">sem</a>.</p>
+
+  <header class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>matus<span class="mute">.krivanik</span></span>
+    </div>
+    <nav>
+      <a href="#o-mne">about_me</a>
+      <a href="#projekty">projects</a>
+      <a href="#tech-stack">tech_stack</a>
+      <a href="#kontakt">contact</a>
+    </nav>
+    <div class="meta">
+      <span class="status"><span class="pulse"></span> mk_core · stable_node</span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-set="sk">SK</button>
+      <button type="button" data-set="en">EN</button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section id="o-mne" class="hero">
+      <div class="kicker">
+        <span>§ 00 — identity_dump</span>
+        <span class="line"></span>
+        <span>age · 17.00°years</span>
+      </div>
+
+      <h1>
+        Matúš Krivánik: <em>Systems & Hardware</em><br>
+        Development Portfolio.
+      </h1>
+
+      <div class="hero-grid">
+        <div>
+          <p class="lede" lang="sk">
+            Mám 17 rokov a špecializujem sa na <strong>nízkoúrovňové programovanie, serverové technológie</strong> a hardvérový vývoj.
+            Aktuálne navrhujem vlastný 8-bitový mikropočítač <strong>MNPK-01</strong> – od inštrukčnej sady cez RTL až po plošný spoj.
+          </p>
+          <p class="lede" lang="en">
+            I am 17 and I focus on <strong>low-level programming, server technologies</strong> and hardware development.
+            Right now I am designing my own 8-bit microcomputer, <strong>MNPK-01</strong> – from the instruction set through RTL to a PCB.
+          </p>
+        </div>
+
+        <div class="hero-terminal">
+          <div class="term-bar">
+            <span></span><span></span><span></span>
+            <span class="path">~</span>
+          </div>
+          <pre><span>›</span> whoami
+<span class="green">matus_krivanik</span> — systems & hardware engineer
+<span>›</span> cat core_interests.txt
+<span class="green">●</span> low_level_programming (C/C++, Rust, ASM)
+<span class="green">●</span> hardware_description_languages (Verilog)
+<span class="green">●</span> bare_metal_dev & server_infrastructure
+<span>›</span> █</pre>
+        </div>
+      </div>
+
+      <div class="counters">
+        <div><b>04</b><span>Core Langs (C/C++/Rust/ASM)</span></div>
+        <div><b>02</b><span>HDLs (Verilog/SysVerilog)</span></div>
+        <div><b>04</b><span>Sys / Devops Tools</span></div>
+        <div><b>02</b><span>Total Projects</span></div>
+      </div>
+    </section>
+
+    <section id="projekty" class="section">
+      <div class="kicker">
+        <span>§ 01 — repository_files</span>
+        <span class="line"></span>
+        <span>development_targets</span>
+      </div>
+      <h2>Selected Projects</h2>
+
+      <article class="feature">
+        <div class="feature-head">
+          <h3>MNPK-01 <span class="mute">/ 8-bit microcomputer</span></h3>
+          <span class="badge">active_dev · SOČ</span>
+        </div>
+
+        <p class="lede" lang="sk">
+          Vlastný 8-bitový mikropočítač navrhnutý od logických hradiel až po fyzický plošný spoj.
+          Obsahuje vlastnú inštrukčnú sadu, procesor v SystemVerilogu overovaný simuláciou vo Verilatore,
+          nasadenie na FPGA a vlastnú dosku. Projekt robím ako stredoškolskú odbornú činnosť (SOČ).
+        </p>
+        <p class="lede" lang="en">
+          A custom 8-bit microcomputer designed from logic gates up to a physical printed circuit board.
+          It covers a custom instruction set, a CPU written in SystemVerilog and verified in Verilator,
+          FPGA deployment and a custom board. I am building it as my high-school research project (SOČ).
+        </p>
+
+        <div class="feature-grid">
+          <div>
+            <ul class="specs">
+              <li><span lang="sk">dátová cesta</span><span lang="en">data path</span><span>8 bit</span></li>
+              <li><span lang="sk">adresa</span><span lang="en">address</span><span>16 bit</span></li>
+              <li><span lang="sk">inštrukcia</span><span lang="en">instruction</span><span>16 bit · 1 word</span></li>
+              <li><span lang="sk">registre</span><span lang="en">registers</span><span>16 × 16 bit</span></li>
+              <li><span lang="sk">architektúra</span><span lang="en">architecture</span><span>Harvard</span></li>
+              <li><span lang="sk">ALU operácie</span><span lang="en">ALU operations</span><span>15</span></li>
+            </ul>
+
+            <ul class="progress">
+              <li class="ok">ALU <span class="mute" lang="sk">– otestovaná pre všetky vstupy</span><span class="mute" lang="en">– exhaustively tested</span></li>
+              <li class="ok">register file · program counter</li>
+              <li class="wip">control unit <span class="mute">– NOP, MVI, MVIB, MOV</span></li>
+              <li class="wip">ISA <span class="mute" lang="sk">– skoky, pamäť, I/O</span><span class="mute" lang="en">– jumps, memory, I/O</span></li>
+              <li class="todo">FPGA · PCB</li>
+            </ul>
+          </div>
+
+          <div>
+            <p lang="sk">
+              <strong>ALU ako syscall:</strong> kód operácie sa uloží do registra R1 a jedna inštrukcia
+              <code>ALU</code> s tromi registrami ju vykoná. Operácia sa tak dá zvoliť aj počas behu programu.
+            </p>
+            <p lang="en">
+              <strong>The ALU as a syscall:</strong> the operation code is stored in register R1 and a single
+              three-register <code>ALU</code> instruction executes it, so the operation can even be chosen at run time.
+            </p>
+            <div class="hero-terminal">
+              <div class="term-bar">
+                <span></span><span></span><span></span>
+                <span class="path">example.asm</span>
+              </div>
+              <pre>MVI  R1, ADD      <span class="c">; 0x1100</span>
+MVI  R2, 59       <span class="c">; 0x123B</span>
+MVI  R3, 49       <span class="c">; 0x1331</span>
+ALU  R2, R3, R4   <span class="c">; 0x4234</span>
+<span class="green">›</span> R4 = <span class="green">108</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tags"><span>SystemVerilog</span><span>Verilator</span><span>C++ Testbench</span><span>ISA Design</span><span>FPGA</span><span>PCB</span></div>
+
+        <div class="cta">
+          <a class="btn" lang="sk" href="/mnpk01-soc/sk/">dokumentácia →</a>
+          <a class="btn" lang="en" href="/mnpk01-soc/">documentation →</a>
+          <a class="btn ghost" href="https://github.com/krivanikm/mnpk01-soc" target="_blank" rel="noopener">
+            <span lang="sk">zdrojový kód →</span><span lang="en">source_code →</span>
+          </a>
+        </div>
+      </article>
+
+      <ul class="work">
+        <li>
+          <span class="n">02</span>
+          <div>
+            <h3>8-bit CPU Design From Scratch</h3>
+            <p lang="sk">Môj prvý komplexný návrh procesorovej architektúry v simulátore Logisim Evolution. Cieľom bolo pochopiť logiku počítačov od základných hradiel až po inštrukčný cyklus. Obsahuje funkčný 8-bitový register file, program counter a inštrukčný dekodér. Inšpirované prácou Bena Eatera a knihou Code od Charlesa Petzolda.</p>
+            <p lang="en">My first complete CPU architecture design, built in the Logisim Evolution simulator. The goal was to understand how computers work from basic gates up to the instruction cycle. It includes a working 8-bit register file, program counter and instruction decoder. Inspired by Ben Eater's work and the book Code by Charles Petzold.</p>
+            <div class="tags"><span>Logisim-Evolution</span><span>Digital-Logic</span><span>ALU</span><span>CPU-Architecture</span></div>
+          </div>
+          <span class="year">archived</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="tech-stack" class="section alt">
+      <div class="kicker">
+        <span>§ 02 — hardware_software_stack</span>
+        <span class="line"></span>
+        <span>supported_technologies</span>
+      </div>
+      <h2>Firmware & Systems Tech Stack</h2>
+
+      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+        <div class="tech-card">
+          <div class="svc-cmd">$ ./low-level-software</div>
+          <h3>Software & Systems</h3>
+          <p lang="sk">Vývoj vysoko optimalizovaného softvéru, systémových nástrojov a testbenchov s priamym prístupom k pamäti.</p>
+          <p lang="en">Building highly optimised software, system tools and testbenches with direct memory access.</p>
+          <ul>
+            <li>C / C++</li>
+            <li>Rust</li>
+            <li>Assembly (ASM)</li>
+            <li>POSIX / Linux APIs</li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="svc-cmd">$ ./hardware-description</div>
+          <h3>Hardware & RTL Design</h3>
+          <p lang="sk">Modelovanie, syntéza a verifikácia digitálnych štruktúr, architektúr procesorov a simulácia obvodov.</p>
+          <p lang="en">Modelling, synthesis and verification of digital structures and CPU architectures, and circuit simulation.</p>
+          <ul>
+            <li>Verilog</li>
+            <li>SystemVerilog</li>
+            <li>Verilator</li>
+            <li>Logisim Evolution</li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="svc-cmd">$ ./infrastructure-management</div>
+          <h3>Infrastructure & DevOps</h3>
+          <p lang="sk">Správa domácich alebo produkčných labov, virtualizácia prostredia a kontajnerizácia služieb.</p>
+          <p lang="en">Running home and production labs, virtualisation and containerised services.</p>
+          <ul>
+            <li>Linux (Debian / Arch)</li>
+            <li>Proxmox VE</li>
+            <li>Hyper-V</li>
+            <li>Docker Containers</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="inspirations">
+        <strong lang="sk">Fokus:</strong><strong lang="en">Focus:</strong>
+        Server Technologies · Kernel Optimization · Embedded Systems · RTL Verification · Bare-metal
+      </p>
+    </section>
+
+    <section id="kontakt" class="section contact">
+      <div class="kicker">
+        <span>§ 03 — network_connection</span>
+        <span class="line"></span>
+        <span>external_endpoints</span>
+      </div>
+      <h2>Get in touch / Check my code</h2>
+      <p class="lede" lang="sk">
+        Ak ťa zaujímajú moje projekty, chceš vidieť zdrojové kódy alebo ma kontaktovať, môžeš ma nájsť na nasledujúcich platformách.
+      </p>
+      <p class="lede" lang="en">
+        If you are interested in my projects, want to see the source code or get in touch, you can find me here.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="https://github.com/krivanikm" target="_blank" rel="noopener">github_profile →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mat%C3%BA%C5%A1-kriv%C3%A1nik-5a6368341/" target="_blank" rel="noopener">linkedin_profile →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© 2026 Matúš Krivánik — Systems & Hardware Developer</div>
+    <div class="mute">v1.1.0-release</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".lang-switch button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var lang = b.getAttribute("data-set");
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang;
+        try { localStorage.setItem("lang", lang); } catch (e) {}
+      });
+    });
+  </script>
+
 </body>
 </html>
