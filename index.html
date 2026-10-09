@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=1.3" />
 </head>
 <body>
 
@@ -280,15 +280,15 @@
         <div class="schem">
           <h4 class="mini"><span lang="sk">Schémy z Yosys</span><span lang="en">Yosys schematics</span></h4>
           <div class="schem-grid">
-            <a href="/mnpk01-soc/assets/schematics/system_top.svg" target="_blank" rel="noopener">
+            <a href="/mnpk01-soc/assets/schematics/system_top.svg" class="sv-open" data-src="/mnpk01-soc/assets/schematics/system_top.svg">
               <img src="/mnpk01-soc/assets/schematics/system_top.svg" alt="system_top schematic" loading="lazy" />
               <span>system_top</span>
             </a>
-            <a href="/mnpk01-soc/assets/schematics/programcounter.svg" target="_blank" rel="noopener">
+            <a href="/mnpk01-soc/assets/schematics/programcounter.svg" class="sv-open" data-src="/mnpk01-soc/assets/schematics/programcounter.svg">
               <img src="/mnpk01-soc/assets/schematics/programcounter.svg" alt="program counter schematic" loading="lazy" />
               <span>program counter</span>
             </a>
-            <a href="/mnpk01-soc/assets/schematics/alu.svg" target="_blank" rel="noopener">
+            <a href="/mnpk01-soc/assets/schematics/alu.svg" class="sv-open" data-src="/mnpk01-soc/assets/schematics/alu.svg">
               <img src="/mnpk01-soc/assets/schematics/alu.svg" alt="ALU schematic" loading="lazy" />
               <span>ALU</span>
             </a>
@@ -403,9 +403,40 @@
 
   <footer>
     <div>© 2026 Matúš Krivánik — Systems &amp; Hardware Developer</div>
-    <div class="mute">v1.2.0-release</div>
+    <div class="mute">v1.3.0-release</div>
   </footer>
 
+  <script src="js/schem.js?v=1.3"></script>
+  <script>
+    // schéma cez celú obrazovku so zoomom
+    (function () {
+      var modal = null;
+      function close() {
+        if (!modal) return;
+        modal.remove();
+        modal = null;
+        document.body.style.overflow = "";
+      }
+      document.querySelectorAll(".sv-open").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          close();
+          modal = document.createElement("div");
+          modal.className = "sv-modal";
+          modal.innerHTML = '<div class="sv" data-src="' + a.getAttribute("data-src") + '"></div>' +
+            '<button type="button" class="sv-close" aria-label="Close">✕</button>' +
+            '<div class="sv-help"><span lang="sk">ťahaj = posun · koliesko / + − = zoom · Esc = zavrieť</span><span lang="en">drag = move · wheel / + − = zoom · Esc = close</span></div>';
+          document.body.appendChild(modal);
+          document.body.style.overflow = "hidden";
+          var box = modal.querySelector(".sv");
+          box.classList.add("sv-max");
+          window.SchemViewer(box);
+          modal.querySelector(".sv-close").addEventListener("click", close);
+        });
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
   <script>
     // prepínač jazyka
     document.querySelectorAll(".lang-switch button").forEach(function (b) {

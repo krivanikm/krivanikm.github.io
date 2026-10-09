@@ -1210,3 +1210,108 @@ footer {
     transform: none;
   }
 }
+
+
+/* --- PREHLIADAČ SCHÉM (cez celú obrazovku) --- */
+
+.schem-grid a {
+  cursor: zoom-in;
+}
+
+.sv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #f4f3ee;
+  animation: rise 0.25s ease both;
+}
+
+.sv {
+  position: absolute;
+  inset: 0;
+}
+
+.sv-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.sv-stage.drag {
+  cursor: grabbing;
+}
+
+.sv-stage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  transform-origin: 0 0;
+}
+
+.sv-bar {
+  position: absolute;
+  right: 64px;
+  top: 14px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.sv-bar [data-a="full"] {
+  display: none;
+}
+
+.sv-bar button,
+.sv-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(12, 13, 12, 0.9);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sv-bar button:hover,
+.sv-close:hover {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.sv-close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+
+.sv-zoom {
+  order: -1;
+  min-width: 56px;
+  padding: 0 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #555;
+  text-align: right;
+}
+
+.sv-help {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(12, 13, 12, 0.85);
+  color: var(--soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+}
