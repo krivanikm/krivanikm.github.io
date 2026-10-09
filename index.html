@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matúš Krivánik — Systems & Hardware Developer</title>
-  <meta name="description" content="Portfolio of Matúš Krivánik – low-level programming, RTL design and MNPK-01, a custom 8-bit microcomputer." />
+  <meta name="description" content="Portfolio of Matúš Krivánik – low-level programming, RTL design and MNPK-01, a custom 16-bit microcomputer." />
   <meta property="og:title" content="Matúš Krivánik — Systems & Hardware Developer" />
-  <meta property="og:description" content="Low-level programming, RTL design and MNPK-01, a custom 8-bit microcomputer." />
+  <meta property="og:description" content="Low-level programming, RTL design and MNPK-01, a custom 16-bit microcomputer." />
   <meta property="og:type" content="website" />
   <script>
     // jazyk: uložená voľba, inak podľa prehliadača (sk/cs -> SK, ostatné -> EN)
@@ -18,17 +18,21 @@
       }
       document.documentElement.setAttribute("data-lang", lang);
       document.documentElement.lang = lang;
+      document.documentElement.classList.add("js");
     })();
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header class="nav">
-    <div class="brand">
+    <a class="brand" href="#top">
       <span class="dot"></span>
       <span>matus<span class="mute">.krivanik</span></span>
-    </div>
+    </a>
     <nav>
       <a href="#o-mne">about_me</a>
       <a href="#projekty">projects</a>
@@ -46,123 +50,252 @@
 
   <main id="top">
 
+    <!-- ============ HERO ============ -->
     <section id="o-mne" class="hero">
-      <div class="kicker">
-        <span>§ 00 — identity_dump</span>
-        <span class="line"></span>
-        <span>status · student</span>
-      </div>
-
-      <h1>
-        Matúš Krivánik: <em>Systems & Hardware</em><br>
-        Development Portfolio.
-      </h1>
-
       <div class="hero-grid">
-        <div>
+        <div class="hero-text">
+          <div class="kicker">
+            <span>§ 00 — identity_dump</span>
+            <span class="line"></span>
+          </div>
+
+          <h1>
+            Matúš Krivánik<br>
+            <em>Systems &amp; Hardware</em><br>
+            <span lang="sk">Developer.</span><span lang="en">Developer.</span>
+          </h1>
+
           <p class="lede" lang="sk">
             Som študent 3. ročníka strednej školy a špecializujem sa na <strong>nízkoúrovňové programovanie, serverové technológie</strong> a hardvérový vývoj.
-            Aktuálne navrhujem vlastný 8-bitový mikropočítač <strong>MNPK-01</strong> – od inštrukčnej sady cez RTL až po plošný spoj.
+            Aktuálne navrhujem vlastný 16-bitový mikropočítač <strong>MNPK-01</strong> – od inštrukčnej sady cez RTL až po plošný spoj.
           </p>
           <p class="lede" lang="en">
             I am a third-year high school student focusing on <strong>low-level programming, server technologies</strong> and hardware development.
-            Right now I am designing my own 8-bit microcomputer, <strong>MNPK-01</strong> – from the instruction set through RTL to a PCB.
+            Right now I am designing my own 16-bit microcomputer, <strong>MNPK-01</strong> – from the instruction set through RTL to a PCB.
           </p>
-        </div>
 
-        <div class="hero-terminal">
-          <div class="term-bar">
-            <span></span><span></span><span></span>
-            <span class="path">~</span>
+          <div class="cta">
+            <a class="btn" href="#projekty"><span lang="sk">pozri MNPK-01 ↓</span><span lang="en">see MNPK-01 ↓</span></a>
+            <a class="btn ghost" href="https://github.com/krivanikm" target="_blank" rel="noopener">github →</a>
           </div>
-          <pre><span>›</span> whoami
-<span class="green">matus_krivanik</span> — systems & hardware engineer
-<span>›</span> cat core_interests.txt
-<span class="green">●</span> low_level_programming (C/C++, Rust, ASM)
-<span class="green">●</span> hardware_description_languages (Verilog)
-<span class="green">●</span> bare_metal_dev & server_infrastructure
-<span>›</span> █</pre>
         </div>
-      </div>
 
-      <div class="counters">
-        <div><b>04</b><span>Core Langs (C/C++/Rust/ASM)</span></div>
-        <div><b>02</b><span>HDLs (Verilog/SysVerilog)</span></div>
-        <div><b>04</b><span>Sys / Devops Tools</span></div>
-        <div><b>02</b><span>Total Projects</span></div>
+        <!-- animovaný čip -->
+        <div class="chip-wrap" aria-hidden="true">
+          <svg class="chip" viewBox="0 0 400 400">
+            <defs>
+              <pattern id="dieGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+                <path d="M8 0H0V8" fill="none" stroke="#1b1d19" stroke-width="1" />
+              </pattern>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#b4ff39" stop-opacity=".18" />
+                <stop offset="1" stop-color="#b4ff39" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <circle cx="200" cy="200" r="190" fill="url(#glow)" />
+
+            <!-- spoje od pinov -->
+            <g class="traces">
+              <path d="M140 92V60H60V20" /><path d="M170 92V40H120V8" /><path d="M230 92V40H280V8" /><path d="M260 92V60H340V20" />
+              <path d="M140 308V340H60V380" /><path d="M170 308V360H120V392" /><path d="M230 308V360H280V392" /><path d="M260 308V340H340V380" />
+              <path d="M92 140H60V60H20" /><path d="M92 260H60V340H20" /><path d="M308 140H340V60H380" /><path d="M308 260H340V340H380" />
+              <path d="M92 200H8" /><path d="M308 200H392" /><path d="M200 92V8" /><path d="M200 308V392" />
+            </g>
+            <g class="pulses">
+              <path d="M140 92V60H60V20" /><path d="M230 92V40H280V8" /><path d="M260 308V340H340V380" />
+              <path d="M92 260H60V340H20" /><path d="M308 140H340V60H380" /><path d="M200 308V392" /><path d="M92 200H8" />
+            </g>
+
+            <!-- piny -->
+            <g class="pins">
+              <rect x="134" y="84" width="12" height="10" /><rect x="164" y="84" width="12" height="10" /><rect x="194" y="84" width="12" height="10" /><rect x="224" y="84" width="12" height="10" /><rect x="254" y="84" width="12" height="10" />
+              <rect x="134" y="306" width="12" height="10" /><rect x="164" y="306" width="12" height="10" /><rect x="194" y="306" width="12" height="10" /><rect x="224" y="306" width="12" height="10" /><rect x="254" y="306" width="12" height="10" />
+              <rect x="84" y="134" width="10" height="12" /><rect x="84" y="164" width="10" height="12" /><rect x="84" y="194" width="10" height="12" /><rect x="84" y="224" width="10" height="12" /><rect x="84" y="254" width="10" height="12" />
+              <rect x="306" y="134" width="10" height="12" /><rect x="306" y="164" width="10" height="12" /><rect x="306" y="194" width="10" height="12" /><rect x="306" y="224" width="10" height="12" /><rect x="306" y="254" width="10" height="12" />
+            </g>
+
+            <!-- puzdro a čip -->
+            <rect class="pkg" x="94" y="94" width="212" height="212" rx="10" />
+            <circle cx="112" cy="112" r="4" fill="#2b2e27" />
+            <rect x="118" y="118" width="164" height="164" rx="4" fill="url(#dieGrid)" stroke="#2b2e27" />
+
+            <!-- bloky vo vnútri; svietia postupne ako fázy inštrukcie -->
+            <g class="blocks">
+              <rect class="b b1" x="128" y="128" width="66" height="40" rx="3" /><text x="161" y="152">PC</text>
+              <rect class="b b2" x="206" y="128" width="66" height="40" rx="3" /><text x="239" y="152">CU</text>
+              <rect class="b b3" x="128" y="178" width="66" height="94" rx="3" /><text x="161" y="222">REG</text><text class="s" x="161" y="236">16×16</text>
+              <rect class="b b4" x="206" y="178" width="66" height="54" rx="3" /><text x="239" y="209">ALU</text>
+              <rect class="b b5" x="206" y="242" width="66" height="30" rx="3" /><text class="s" x="239" y="261">Z C N</text>
+            </g>
+          </svg>
+          <div class="chip-label">
+            <b>MNPK-01</b>
+            <span>16-bit · SystemVerilog</span>
+            <span class="phase"><span class="ph p1">FETCH</span><span class="ph p2">DECODE</span><span class="ph p3">EXECUTE</span></span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- ============ PROJEKTY ============ -->
     <section id="projekty" class="section">
-      <div class="kicker">
+      <div class="kicker reveal">
         <span>§ 01 — repository_files</span>
         <span class="line"></span>
         <span>development_targets</span>
       </div>
-      <h2>Selected Projects</h2>
+      <h2 class="reveal"><span lang="sk">Vybrané projekty</span><span lang="en">Selected Projects</span></h2>
 
-      <article class="feature">
+      <article class="feature reveal">
         <div class="feature-head">
-          <h3>MNPK-01 <span class="mute">/ 8-bit microcomputer</span></h3>
-          <span class="badge">active_dev · SOČ</span>
+          <h3>MNPK-01 <span class="mute">/ <span lang="sk">16-bitový mikropočítač</span><span lang="en">16-bit microcomputer</span></span></h3>
+          <span class="badge"><span class="pulse"></span>active_dev · SOČ</span>
         </div>
 
-        <p class="lede" lang="sk">
-          Vlastný 8-bitový mikropočítač navrhnutý od logických hradiel až po fyzický plošný spoj.
+        <p class="lede wide" lang="sk">
+          Vlastný 16-bitový mikropočítač navrhnutý od logických hradiel až po fyzický plošný spoj.
           Obsahuje vlastnú inštrukčnú sadu, procesor v SystemVerilogu overovaný simuláciou vo Verilatore,
           nasadenie na FPGA a vlastnú dosku. Projekt robím ako stredoškolskú odbornú činnosť (SOČ).
         </p>
-        <p class="lede" lang="en">
-          A custom 8-bit microcomputer designed from logic gates up to a physical printed circuit board.
+        <p class="lede wide" lang="en">
+          A custom 16-bit microcomputer designed from logic gates up to a physical printed circuit board.
           It covers a custom instruction set, a CPU written in SystemVerilog and verified in Verilator,
           FPGA deployment and a custom board. I am building it as my high-school research project (SOČ).
         </p>
 
-        <div class="feature-grid">
-          <div>
-            <ul class="specs">
-              <li><span lang="sk">dátová cesta</span><span lang="en">data path</span><span>8 bit</span></li>
-              <li><span lang="sk">adresa</span><span lang="en">address</span><span>16 bit</span></li>
-              <li><span lang="sk">inštrukcia</span><span lang="en">instruction</span><span>16 bit · 1 word</span></li>
-              <li><span lang="sk">registre</span><span lang="en">registers</span><span>16 × 16 bit</span></li>
-              <li><span lang="sk">architektúra</span><span lang="en">architecture</span><span>Harvard</span></li>
-              <li><span lang="sk">ALU operácie</span><span lang="en">ALU operations</span><span>15</span></li>
-            </ul>
+        <!-- čísla -->
+        <div class="stats">
+          <div><b>16<small>bit</small></b><span lang="sk">dátová cesta</span><span lang="en">data path</span></div>
+          <div><b>16<small>×16</small></b><span lang="sk">registrov</span><span lang="en">registers</span></div>
+          <div><b>14</b><span lang="sk">ALU operácií</span><span lang="en">ALU operations</span></div>
+          <div><b>13<small>/13</small></b><span lang="sk">testov systému</span><span lang="en">system tests pass</span></div>
+          <div><b>39.7<small>M</small></b><span lang="sk">kontrol ALU</span><span lang="en">ALU checks</span></div>
+          <div><b>~15<small>%</small></b><span lang="sk">LUT na Tang Nano 9K</span><span lang="en">LUTs on Tang Nano 9K</span></div>
+        </div>
 
-            <ul class="progress">
-              <li class="ok">ALU <span class="mute" lang="sk">– otestovaná pre všetky vstupy</span><span class="mute" lang="en">– exhaustively tested</span></li>
-              <li class="ok">register file · program counter</li>
-              <li class="ok">ALU <span class="mute" lang="sk">inštrukcia – operácia z R1, 12/12 testov</span><span class="mute" lang="en">instruction – op from R1, 12/12 tests</span></li>
-              <li class="wip">control unit <span class="mute">– NOP, MVI, MVIB, MOV, ALU</span></li>
-              <li class="wip">ISA <span class="mute" lang="sk">– skoky, pamäť, I/O</span><span class="mute" lang="en">– jumps, memory, I/O</span></li>
-              <li class="todo">FPGA · PCB</li>
-            </ul>
+        <!-- interaktívna architektúra -->
+        <div class="arch">
+          <div class="arch-head">
+            <span class="mono mute">// architecture.svg</span>
+            <span class="mono mute" lang="sk">prejdi myšou na blok</span><span class="mono mute" lang="en">hover a block</span>
           </div>
+          <svg class="arch-svg" viewBox="0 0 760 300" role="img" aria-label="MNPK-01 block diagram">
+            <defs>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#5a5d54" />
+              </marker>
+              <marker id="arA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#b4ff39" />
+              </marker>
+            </defs>
 
-          <div>
-            <p lang="sk">
-              <strong>ALU ako syscall:</strong> kód operácie sa uloží do registra R1 a jedna inštrukcia
-              <code>ALU</code> s tromi registrami ju vykoná. Operácia sa tak dá zvoliť aj počas behu programu.
-            </p>
-            <p lang="en">
-              <strong>The ALU as a syscall:</strong> the operation code is stored in register R1 and a single
-              three-register <code>ALU</code> instruction executes it, so the operation can even be chosen at run time.
-            </p>
-            <div class="hero-terminal">
-              <div class="term-bar">
-                <span></span><span></span><span></span>
-                <span class="path">example.asm</span>
-              </div>
-              <pre>MVI  R1, ADD      <span class="c">; 0x1100</span>
-MVI  R2, 59       <span class="c">; 0x123B</span>
-MVI  R3, 49       <span class="c">; 0x1331</span>
-ALU  R2, R3, R4   <span class="c">; 0x7234</span>
-<span class="green">›</span> R4 = <span class="green">108</span></pre>
-            </div>
+            <g class="wires">
+              <path d="M100 196V100" marker-end="url(#ar)" /><text x="108" y="152">addr · 16b</text>
+              <path d="M180 62H254" marker-end="url(#ar)" /><text x="186" y="54">instr · 16b</text>
+              <path d="M350 94V190" marker-end="url(#ar)" /><text x="358" y="146">control</text>
+              <path class="dash" d="M260 82H222V228H186" marker-end="url(#ar)" /><text x="196" y="246">jump</text>
+              <path d="M440 214H490V160H534" marker-end="url(#ar)" /><text x="452" y="206">Ra, Rb</text>
+              <path d="M720 145H742V282H350V266" marker-end="url(#ar)" /><text x="560" y="276">result → Rd</text>
+              <path d="M630 113V62H446" marker-end="url(#ar)" /><text x="500" y="54">flags Z C N</text>
+              <path class="acc" d="M440 244H630V183" marker-end="url(#arA)" /><text class="acc" x="470" y="236">R1[3:0] → op</text>
+            </g>
+
+            <g class="blk" data-k="bram" tabindex="0"><rect x="20" y="30" width="160" height="64" rx="6" /><text x="100" y="58">BRAM</text><text class="s" x="100" y="76">program</text></g>
+            <g class="blk" data-k="pc" tabindex="0"><rect x="20" y="196" width="160" height="64" rx="6" /><text x="100" y="224">PC</text><text class="s" x="100" y="242">16-bit</text></g>
+            <g class="blk" data-k="cu" tabindex="0"><rect x="260" y="30" width="180" height="64" rx="6" /><text x="350" y="58">CONTROL UNIT</text><text class="s" x="350" y="76">FSM</text></g>
+            <g class="blk" data-k="rf" tabindex="0"><rect x="260" y="196" width="180" height="64" rx="6" /><text x="350" y="224">REGISTER FILE</text><text class="s" x="350" y="242">R0 – R15 · 16-bit</text></g>
+            <g class="blk" data-k="alu" tabindex="0"><rect x="540" y="113" width="180" height="64" rx="6" /><text x="630" y="141">ALU</text><text class="s" x="630" y="159">16-bit · 14 ops</text></g>
+          </svg>
+          <div class="arch-info" aria-live="polite">
+            <div data-i="default"><span lang="sk">Control unit riadi všetky bloky priamo – bez samostatnej zbernicovej jednotky. Vyber blok a uvidíš, čo robí.</span><span lang="en">The control unit drives every block directly – no separate bus unit. Pick a block to see what it does.</span></div>
+            <div data-i="bram" hidden><b>BRAM</b> — <span lang="sk">pamäť programu vo FPGA. Synchrónna: dáta prídu až takt po adrese, preto má CU pravidlo časovania (každá inštrukcia ≥ 3 takty).</span><span lang="en">program memory inside the FPGA. Synchronous: data arrive one cycle after the address, so the CU follows a timing rule (every instruction ≥ 3 cycles).</span></div>
+            <div data-i="pc" hidden><b>Program counter</b> — <span lang="sk">16-bitová adresa aktuálnej inštrukcie. Vie sa posunúť o 1 alebo načítať cieľ skoku (JMP sa práve pripája).</span><span lang="en">16-bit address of the current instruction. It can step by one or load a jump target (JMP is being wired up right now).</span></div>
+            <div data-i="cu" hidden><b>Control unit</b> — <span lang="sk">konečný automat FETCH → DECODE → vykonanie. Dekóduje 16-bitovú inštrukciu a ukladá flagy Z, C, N po každej ALU operácii.</span><span lang="en">a finite state machine FETCH → DECODE → execute. Decodes the 16-bit instruction and stores the Z, C, N flags after every ALU operation.</span></div>
+            <div data-i="rf" hidden><b>Register file</b> — <span lang="sk">16 registrov po 16 bitoch. Číta celé slovo, zapisuje po bajtoch (MVI/MVIB) alebo celé slovo (MOV, ALU). R1 ide drôtom priamo do ALU.</span><span lang="en">16 registers of 16 bits. Reads a whole word, writes a single byte (MVI/MVIB) or the whole word (MOV, ALU). R1 is wired straight into the ALU.</span></div>
+            <div data-i="alu" hidden><b>ALU</b> — <span lang="sk">kombinačná 16-bitová jednotka: ADD, SUB, INC, DEC, AND, OR, XOR, NOT, SHL, SHR, ROL, CMP, PASS, CLR. Kód operácie berie z R1 – ako syscall.</span><span lang="en">a combinational 16-bit unit: ADD, SUB, INC, DEC, AND, OR, XOR, NOT, SHL, SHR, ROL, CMP, PASS, CLR. It takes the operation code from R1 – like a syscall.</span></div>
           </div>
         </div>
 
-        <div class="tags"><span>SystemVerilog</span><span>Verilator</span><span>C++ Testbench</span><span>ISA Design</span><span>FPGA</span><span>PCB</span></div>
+        <!-- ALU ako syscall -->
+        <div class="feature-grid">
+          <div>
+            <h4 class="mini"><span lang="sk">ALU ako syscall</span><span lang="en">The ALU as a syscall</span></h4>
+            <p lang="sk">
+              Kód operácie sa uloží do registra <code>R1</code> a jedna inštrukcia <code>ALU</code> s tromi registrami ju vykoná.
+              Operácia sa tak dá zvoliť aj počas behu programu a v opcode ostáva miesto pre ďalšie inštrukcie.
+            </p>
+            <p lang="en">
+              The operation code is stored in register <code>R1</code> and a single three-register <code>ALU</code> instruction executes it,
+              so the operation can be chosen at run time and opcode space stays free for other instructions.
+            </p>
+
+            <div class="enc">
+              <div class="enc-row">
+                <span class="f op">0111</span><span class="f ra">aaaa</span><span class="f rb">bbbb</span><span class="f rd">dddd</span>
+              </div>
+              <div class="enc-row lbl">
+                <span>opcode</span><span>Ra</span><span>Rb</span><span>Rd</span>
+              </div>
+              <div class="enc-bits"><span>15</span><span>12</span><span>11</span><span>8</span><span>7</span><span>4</span><span>3</span><span>0</span></div>
+            </div>
+          </div>
+
+          <div class="hero-terminal run">
+            <div class="term-bar">
+              <span></span><span></span><span></span>
+              <span class="path">example.asm</span>
+            </div>
+            <pre><span class="l">MVI  R1, ADD      <span class="c">; 0x1100</span></span>
+<span class="l">MVI  R2, 59       <span class="c">; 0x123B</span></span>
+<span class="l">MVI  R3, 49       <span class="c">; 0x1331</span></span>
+<span class="l">ALU  R2, R3, R4   <span class="c">; 0x7234</span></span>
+<span class="l"><span class="green">›</span> R4 = <span class="green">108</span>  <span class="c">✓ 4 cycles</span></span></pre>
+          </div>
+        </div>
+
+        <!-- roadmap -->
+        <div class="road">
+          <div class="road-head">
+            <h4 class="mini">roadmap</h4>
+            <span class="mono mute">5 / 11</span>
+          </div>
+          <div class="bar"><span style="width: 45%"></span></div>
+          <ol class="steps">
+            <li class="ok">ISA</li>
+            <li class="ok">ALU</li>
+            <li class="ok">register file</li>
+            <li class="ok">16-bit datapath</li>
+            <li class="ok"><span lang="sk">ALU inštrukcia</span><span lang="en">ALU instruction</span></li>
+            <li class="wip">JMP + <span lang="sk">podmienky</span><span lang="en">conditions</span></li>
+            <li class="todo">LOAD / STORE</li>
+            <li class="todo">I/O · UART</li>
+            <li class="todo">assembler</li>
+            <li class="todo">FPGA</li>
+            <li class="todo">PCB</li>
+          </ol>
+        </div>
+
+        <!-- schémy -->
+        <div class="schem">
+          <h4 class="mini"><span lang="sk">Schémy z Yosys</span><span lang="en">Yosys schematics</span></h4>
+          <div class="schem-grid">
+            <a href="/mnpk01-soc/assets/schematics/system_top.svg" target="_blank" rel="noopener">
+              <img src="/mnpk01-soc/assets/schematics/system_top.svg" alt="system_top schematic" loading="lazy" />
+              <span>system_top</span>
+            </a>
+            <a href="/mnpk01-soc/assets/schematics/programcounter.svg" target="_blank" rel="noopener">
+              <img src="/mnpk01-soc/assets/schematics/programcounter.svg" alt="program counter schematic" loading="lazy" />
+              <span>program counter</span>
+            </a>
+            <a href="/mnpk01-soc/assets/schematics/alu.svg" target="_blank" rel="noopener">
+              <img src="/mnpk01-soc/assets/schematics/alu.svg" alt="ALU schematic" loading="lazy" />
+              <span>ALU</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="tags"><span>SystemVerilog</span><span>Verilator</span><span>C++ Testbench</span><span>Yosys</span><span>ISA Design</span><span>FPGA</span><span>PCB</span></div>
 
         <div class="cta">
           <a class="btn" lang="sk" href="/mnpk01-soc/sk/">dokumentácia →</a>
@@ -173,7 +306,7 @@ ALU  R2, R3, R4   <span class="c">; 0x7234</span>
         </div>
       </article>
 
-      <ul class="work">
+      <ul class="work reveal">
         <li>
           <span class="n">02</span>
           <div>
@@ -187,19 +320,19 @@ ALU  R2, R3, R4   <span class="c">; 0x7234</span>
       </ul>
     </section>
 
-    <section id="tech-stack" class="section alt">
-      <div class="kicker">
+    <!-- ============ TECH STACK ============ -->
+    <section id="tech-stack" class="section">
+      <div class="kicker reveal">
         <span>§ 02 — hardware_software_stack</span>
         <span class="line"></span>
         <span>supported_technologies</span>
       </div>
-      <h2>Firmware & Systems Tech Stack</h2>
+      <h2 class="reveal"><span lang="sk">Technológie</span><span lang="en">Firmware &amp; Systems Tech Stack</span></h2>
 
-      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-
-        <div class="tech-card">
+      <div class="cards">
+        <div class="tech-card reveal">
           <div class="svc-cmd">$ ./low-level-software</div>
-          <h3>Software & Systems</h3>
+          <h3>Software &amp; Systems</h3>
           <p lang="sk">Vývoj vysoko optimalizovaného softvéru, systémových nástrojov a testbenchov s priamym prístupom k pamäti.</p>
           <p lang="en">Building highly optimised software, system tools and testbenches with direct memory access.</p>
           <ul>
@@ -210,22 +343,23 @@ ALU  R2, R3, R4   <span class="c">; 0x7234</span>
           </ul>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card reveal">
           <div class="svc-cmd">$ ./hardware-description</div>
-          <h3>Hardware & RTL Design</h3>
+          <h3>Hardware &amp; RTL Design</h3>
           <p lang="sk">Modelovanie, syntéza a verifikácia digitálnych štruktúr, architektúr procesorov a simulácia obvodov.</p>
           <p lang="en">Modelling, synthesis and verification of digital structures and CPU architectures, and circuit simulation.</p>
           <ul>
             <li>Verilog</li>
             <li>SystemVerilog</li>
             <li>Verilator</li>
+            <li>Yosys</li>
             <li>Logisim Evolution</li>
           </ul>
         </div>
 
-        <div class="tech-card">
+        <div class="tech-card reveal">
           <div class="svc-cmd">$ ./infrastructure-management</div>
-          <h3>Infrastructure & DevOps</h3>
+          <h3>Infrastructure &amp; DevOps</h3>
           <p lang="sk">Správa domácich alebo produkčných labov, virtualizácia prostredia a kontajnerizácia služieb.</p>
           <p lang="en">Running home and production labs, virtualisation and containerised services.</p>
           <ul>
@@ -235,43 +369,45 @@ ALU  R2, R3, R4   <span class="c">; 0x7234</span>
             <li>Docker Containers</li>
           </ul>
         </div>
-
       </div>
 
-      <p class="inspirations">
+      <p class="inspirations reveal">
         <strong lang="sk">Fokus:</strong><strong lang="en">Focus:</strong>
         Server Technologies · Kernel Optimization · Embedded Systems · RTL Verification · Bare-metal
       </p>
     </section>
 
+    <!-- ============ KONTAKT ============ -->
     <section id="kontakt" class="section contact">
-      <div class="kicker">
+      <div class="kicker reveal">
         <span>§ 03 — network_connection</span>
         <span class="line"></span>
         <span>external_endpoints</span>
       </div>
-      <h2>Get in touch / Check my code</h2>
-      <p class="lede" lang="sk">
-        Ak ťa zaujímajú moje projekty, chceš vidieť zdrojové kódy alebo ma kontaktovať, môžeš ma nájsť na nasledujúcich platformách.
-      </p>
-      <p class="lede" lang="en">
-        If you are interested in my projects, want to see the source code or get in touch, you can find me here.
-      </p>
-
-      <div class="cta">
-        <a class="btn" href="https://github.com/krivanikm" target="_blank" rel="noopener">github_profile →</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/mat%C3%BA%C5%A1-kriv%C3%A1nik-5a6368341/" target="_blank" rel="noopener">linkedin_profile →</a>
+      <div class="contact-box reveal">
+        <h2><span lang="sk">Ozvi sa / pozri môj kód</span><span lang="en">Get in touch / Check my code</span></h2>
+        <p class="lede" lang="sk">
+          Ak ťa zaujímajú moje projekty, chceš vidieť zdrojové kódy alebo ma kontaktovať, môžeš ma nájsť na nasledujúcich platformách.
+        </p>
+        <p class="lede" lang="en">
+          If you are interested in my projects, want to see the source code or get in touch, you can find me here.
+        </p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/krivanikm" target="_blank" rel="noopener">github_profile →</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/mat%C3%BA%C5%A1-kriv%C3%A1nik-5a6368341/" target="_blank" rel="noopener">linkedin_profile →</a>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div>© 2026 Matúš Krivánik — Systems & Hardware Developer</div>
-    <div class="mute">v1.1.0-release</div>
+    <div>© 2026 Matúš Krivánik — Systems &amp; Hardware Developer</div>
+    <div class="mute">v1.2.0-release</div>
   </footer>
 
   <script>
+    // prepínač jazyka
     document.querySelectorAll(".lang-switch button").forEach(function (b) {
       b.addEventListener("click", function () {
         var lang = b.getAttribute("data-set");
@@ -280,6 +416,49 @@ ALU  R2, R3, R4   <span class="c">; 0x7234</span>
         try { localStorage.setItem("lang", lang); } catch (e) {}
       });
     });
+
+    // objavenie sekcií pri scrollovaní
+    (function () {
+      var els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(function (e) { e.classList.add("in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+
+    // zvýraznenie aktuálnej sekcie v navigácii
+    (function () {
+      var links = document.querySelectorAll(".nav nav a");
+      var secs = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute("href")); });
+      function onScroll() {
+        var y = window.scrollY + 120, cur = 0;
+        secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; });
+        links.forEach(function (a, i) { a.classList.toggle("active", i === cur); });
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // interaktívna architektúra
+    (function () {
+      var info = document.querySelectorAll(".arch-info [data-i]");
+      function show(k) {
+        info.forEach(function (d) { d.hidden = d.getAttribute("data-i") !== k; });
+        document.querySelectorAll(".blk").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-k") === k); });
+      }
+      document.querySelectorAll(".blk").forEach(function (b) {
+        var k = b.getAttribute("data-k");
+        b.addEventListener("mouseenter", function () { show(k); });
+        b.addEventListener("focus", function () { show(k); });
+        b.addEventListener("click", function () { show(k); });
+      });
+    })();
   </script>
 
 </body>
