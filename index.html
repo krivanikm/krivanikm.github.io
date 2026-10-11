@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=1.4" />
+  <link rel="stylesheet" href="css/style.css?v=1.5" />
 </head>
 <body>
 
@@ -169,9 +169,9 @@
           <div><b>16<small>bit</small></b><span lang="sk">dátová cesta</span><span lang="en">data path</span></div>
           <div><b>16<small>×16</small></b><span lang="sk">registrov</span><span lang="en">registers</span></div>
           <div><b>14</b><span lang="sk">ALU operácií</span><span lang="en">ALU operations</span></div>
-          <div><b>16<small>/16</small></b><span lang="sk">testov systému</span><span lang="en">system tests pass</span></div>
+          <div><b>19<small>/19</small></b><span lang="sk">testov systému</span><span lang="en">system tests pass</span></div>
           <div><b>39.7<small>M</small></b><span lang="sk">kontrol ALU</span><span lang="en">ALU checks</span></div>
-          <div><b>~16<small>%</small></b><span lang="sk">LUT na Tang Nano 9K</span><span lang="en">LUTs on Tang Nano 9K</span></div>
+          <div><b>~14<small>%</small></b><span lang="sk">LUT na Tang Nano 9K</span><span lang="en">LUTs on Tang Nano 9K</span></div>
         </div>
 
         <!-- interaktívna architektúra -->
@@ -197,7 +197,8 @@
               <path d="M260 82H222V228H186" marker-end="url(#ar)" /><text x="196" y="246">jump</text>
               <path d="M440 214H490V160H534" marker-end="url(#ar)" /><text x="452" y="206">Ra, Rb</text>
               <path d="M720 145H742V282H350V266" marker-end="url(#ar)" /><text x="560" y="276">result → Rd</text>
-              <path d="M630 113V62H446" marker-end="url(#ar)" /><text x="500" y="54">flags Z C N</text>
+              <path d="M630 113V62H446" marker-end="url(#ar)" /><text x="470" y="78">flags Z C N</text>
+              <path d="M440 40H554" marker-start="url(#ar)" marker-end="url(#ar)" /><text x="458" y="32">LOAD / STORE</text>
               <path class="acc" d="M440 244H630V183" marker-end="url(#arA)" /><text class="acc" x="470" y="236">R1[3:0] → op</text>
             </g>
 
@@ -205,6 +206,7 @@
             <g class="blk" data-k="pc" tabindex="0"><rect x="20" y="196" width="160" height="64" rx="6" /><text x="100" y="224">PC</text><text class="s" x="100" y="242">16-bit</text></g>
             <g class="blk" data-k="cu" tabindex="0"><rect x="260" y="30" width="180" height="64" rx="6" /><text x="350" y="58">CONTROL UNIT</text><text class="s" x="350" y="76">FSM · JMP</text></g>
             <g class="blk" data-k="rf" tabindex="0"><rect x="260" y="196" width="180" height="64" rx="6" /><text x="350" y="224">REGISTER FILE</text><text class="s" x="350" y="242">R0 – R15 · 16-bit</text></g>
+            <g class="blk" data-k="ram" tabindex="0"><rect x="560" y="14" width="160" height="42" rx="6" /><text x="640" y="33">DATA RAM</text><text class="s" x="640" y="48">4K × 16-bit</text></g>
             <g class="blk" data-k="alu" tabindex="0"><rect x="540" y="113" width="180" height="64" rx="6" /><text x="630" y="141">ALU</text><text class="s" x="630" y="159">16-bit · 14 ops</text></g>
           </svg>
           <div class="arch-info" aria-live="polite">
@@ -213,6 +215,7 @@
             <div data-i="pc" hidden><b>Program counter</b> — <span lang="sk">16-bitová adresa aktuálnej inštrukcie. Posunie sa o 1, alebo pri skoku (JMP so 6 podmienkami) načíta cieľovú adresu z registra.</span><span lang="en">16-bit address of the current instruction. It steps by one, or on a jump (JMP with 6 conditions) loads the target address from a register.</span></div>
             <div data-i="cu" hidden><b>Control unit</b> — <span lang="sk">konečný automat FETCH → DECODE → vykonanie. Dekóduje 16-bitovú inštrukciu a ukladá flagy Z, C, N po každej ALU operácii.</span><span lang="en">a finite state machine FETCH → DECODE → execute. Decodes the 16-bit instruction and stores the Z, C, N flags after every ALU operation.</span></div>
             <div data-i="rf" hidden><b>Register file</b> — <span lang="sk">16 registrov po 16 bitoch. Číta celé slovo, zapisuje po bajtoch (MVI/MVIB) alebo celé slovo (MOV, ALU). R1 ide drôtom priamo do ALU.</span><span lang="en">16 registers of 16 bits. Reads a whole word, writes a single byte (MVI/MVIB) or the whole word (MOV, ALU). R1 is wired straight into the ALU.</span></div>
+            <div data-i="ram" hidden><b>Data RAM</b> — <span lang="sk">4096 slov po 16 bitoch v blokovej pamäti FPGA. Pristupujú k nej iba LOAD a STORE (load/store architektúra ako pri RISC); adresa je v registri.</span><span lang="en">4096 words of 16 bits in FPGA block RAM. Only LOAD and STORE access it (a load/store architecture, as in RISC); the address comes from a register.</span></div>
             <div data-i="alu" hidden><b>ALU</b> — <span lang="sk">kombinačná 16-bitová jednotka: ADD, SUB, INC, DEC, AND, OR, XOR, NOT, SHL, SHR, ROL, CMP, PASS, CLR. Kód operácie berie z R1 – ako syscall.</span><span lang="en">a combinational 16-bit unit: ADD, SUB, INC, DEC, AND, OR, XOR, NOT, SHL, SHR, ROL, CMP, PASS, CLR. It takes the operation code from R1 – like a syscall.</span></div>
           </div>
         </div>
@@ -258,9 +261,9 @@
         <div class="road">
           <div class="road-head">
             <h4 class="mini">roadmap</h4>
-            <span class="mono mute">6 / 11</span>
+            <span class="mono mute">7 / 11</span>
           </div>
-          <div class="bar"><span style="width: 55%"></span></div>
+          <div class="bar"><span style="width: 64%"></span></div>
           <ol class="steps">
             <li class="ok">ISA</li>
             <li class="ok">ALU</li>
@@ -268,8 +271,8 @@
             <li class="ok">16-bit datapath</li>
             <li class="ok"><span lang="sk">ALU inštrukcia</span><span lang="en">ALU instruction</span></li>
             <li class="ok">JMP + <span lang="sk">podmienky</span><span lang="en">conditions</span></li>
-            <li class="wip">LOAD / STORE</li>
-            <li class="todo">I/O · UART</li>
+            <li class="ok">LOAD / STORE</li>
+            <li class="wip">I/O · UART</li>
             <li class="todo">assembler</li>
             <li class="todo">FPGA</li>
             <li class="todo">PCB</li>
@@ -403,10 +406,10 @@
 
   <footer>
     <div>© 2026 Matúš Krivánik — Systems &amp; Hardware Developer</div>
-    <div class="mute">v1.4.0-release</div>
+    <div class="mute">v1.5.0-release</div>
   </footer>
 
-  <script src="js/schem.js?v=1.4"></script>
+  <script src="js/schem.js?v=1.5"></script>
   <script>
     // schéma cez celú obrazovku so zoomom
     (function () {
