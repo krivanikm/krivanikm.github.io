@@ -1315,3 +1315,14 @@ footer {
   white-space: nowrap;
   pointer-events: none;
 }
+
+.shots .schem-grid a {
+  background: #1e1e2e;
+}
+
+.shots .schem-grid img {
+  height: 170px;
+  padding: 0;
+  object-fit: cover;
+  object-position: left top;
+}

@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matúš Krivánik — Systems & Hardware Developer</title>
-  <meta name="description" content="Portfolio of Matúš Krivánik – low-level programming, RTL design and MNPK-01, a custom 16-bit microcomputer." />
+  <meta name="description" content="Portfolio of Matúš Krivánik – low-level programming, RTL design, MNPK-01 (a custom 16-bit microcomputer) and baremetal.nvim." />
   <meta property="og:title" content="Matúš Krivánik — Systems & Hardware Developer" />
-  <meta property="og:description" content="Low-level programming, RTL design and MNPK-01, a custom 16-bit microcomputer." />
+  <meta property="og:description" content="Low-level programming, RTL design, MNPK-01 (a custom 16-bit microcomputer) and baremetal.nvim." />
   <meta property="og:type" content="website" />
   <script>
     // jazyk: uložená voľba, inak podľa prehliadača (sk/cs -> SK, ostatné -> EN)
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="css/style.css?v=1.5" />
+  <link rel="stylesheet" href="css/style.css?v=1.6" />
 </head>
 <body>
 
@@ -67,11 +67,13 @@
 
           <p class="lede" lang="sk">
             Som študent 3. ročníka strednej školy a špecializujem sa na <strong>nízkoúrovňové programovanie, serverové technológie</strong> a hardvérový vývoj.
-            Aktuálne navrhujem vlastný 16-bitový mikropočítač <strong>MNPK-01</strong> – od inštrukčnej sady cez RTL až po plošný spoj.
+            Aktuálne navrhujem vlastný 16-bitový mikropočítač <strong>MNPK-01</strong> – od inštrukčnej sady cez RTL až po plošný spoj –
+            a vyvíjam ho v mojom vlastnom Neovim configu <strong>baremetal.nvim</strong>.
           </p>
           <p class="lede" lang="en">
             I am a third-year high school student focusing on <strong>low-level programming, server technologies</strong> and hardware development.
-            Right now I am designing my own 16-bit microcomputer, <strong>MNPK-01</strong> – from the instruction set through RTL to a PCB.
+            Right now I am designing my own 16-bit microcomputer, <strong>MNPK-01</strong> – from the instruction set through RTL to a PCB –
+            and building it in my own Neovim config, <strong>baremetal.nvim</strong>.
           </p>
 
           <div class="cta">
@@ -309,9 +311,103 @@
         </div>
       </article>
 
+      <article class="feature reveal">
+        <div class="feature-head">
+          <h3>baremetal.nvim <span class="mute">/ <span lang="sk">Neovim pre low-level a HDL</span><span lang="en">Neovim for low-level and HDL work</span></span></h3>
+          <span class="badge"><span class="pulse"></span>released · open_source</span>
+        </div>
+
+        <p class="lede wide" lang="sk">
+          Kompletný Neovim config, v ktorom vyvíjam aj MNPK-01. Zameraný na C, C++, Assembly, Rust, SystemVerilog a VHDL:
+          jazykové servery, debugger, CMake, Verilator lint a spúšťanie testbenchov jednou skratkou.
+          Inštalátor sa opýta, ktoré jazyky chceš, a nastaví len to, čo potrebuješ.
+        </p>
+        <p class="lede wide" lang="en">
+          A batteries-included Neovim config – the one I build MNPK-01 in. Focused on C, C++, Assembly, Rust, SystemVerilog and VHDL:
+          language servers, a debugger, CMake, Verilator lint and running testbenches with a single keymap.
+          The installer asks which languages you want and sets up only what you need.
+        </p>
+
+        <div class="stats">
+          <div><b>9</b><span lang="sk">jazykových skupín</span><span lang="en">language groups</span></div>
+          <div><b>14</b><span lang="sk">LSP serverov</span><span lang="en">LSP servers</span></div>
+          <div><b>~50</b><span lang="sk">pluginov</span><span lang="en">plugins</span></div>
+          <div><b>0.11<small>+</small></b><span lang="sk">Neovim</span><span lang="en">Neovim</span></div>
+          <div><b>5</b><span lang="sk">správcov balíkov</span><span lang="en">package managers</span></div>
+          <div><b>~15<small>min</small></b><span lang="sk">interaktívny tutor</span><span lang="en">interactive tutor</span></div>
+        </div>
+
+        <div class="feature-grid">
+          <div>
+            <h4 class="mini"><span lang="sk">Inštalácia jedným príkazom</span><span lang="en">One-command install</span></h4>
+            <p lang="sk">
+              Skript zistí správcu balíkov (pacman, apt, dnf, zypper, brew), zálohuje pôvodný config a cez Mason
+              doinštaluje jazykové servery, formattery a debuggery. CI na GitHube pri každom pushi overí, že config
+              naštartuje bez chýb na Neovime 0.11 aj na najnovšej verzii.
+            </p>
+            <p lang="en">
+              The script detects the package manager (pacman, apt, dnf, zypper, brew), backs up the existing config and
+              installs language servers, formatters and debuggers through Mason. CI on GitHub checks on every push that the
+              config starts without errors on Neovim 0.11 and on the latest release.
+            </p>
+            <p lang="sk">
+              <code>&lt;Space&gt;rr</code> skompiluje a spustí aktuálny súbor – C s AddressSanitizerom, Rust cez cargo
+              a Verilog testbench cez Icarus spolu so všetkými modulmi projektu.
+            </p>
+            <p lang="en">
+              <code>&lt;Space&gt;rr</code> compiles and runs the current file – C with AddressSanitizer, Rust through cargo
+              and a Verilog testbench through Icarus together with every module of the project.
+            </p>
+          </div>
+
+          <div class="hero-terminal run">
+            <div class="term-bar">
+              <span></span><span></span><span></span>
+              <span class="path">install.sh</span>
+            </div>
+            <pre><span class="l"><span class="green">$</span> curl -fsSL …/install.sh | bash</span>
+<span class="l"><span class="c">Which languages do you want?</span></span>
+<span class="l">  <span class="green">[x]</span> 1) C / C++ / CUDA + CMake</span>
+<span class="l">  <span class="green">[x]</span> 2) Assembly (GAS / NASM)</span>
+<span class="l">  [ ] 3) Rust</span>
+<span class="l">  <span class="green">[x]</span> 4) SystemVerilog / Verilog</span>
+<span class="l">  [ ] 5) VHDL  <span class="c">…</span></span>
+<span class="l"><span class="green">›</span> Done! Start it with: <span class="green">nvim</span></span></pre>
+          </div>
+        </div>
+
+        <div class="schem shots">
+          <h4 class="mini"><span lang="sk">Screenshoty</span><span lang="en">Screenshots</span></h4>
+          <div class="schem-grid">
+            <a href="assets/baremetal/lsp.png" class="sv-open" data-src="assets/baremetal/lsp.png">
+              <img src="assets/baremetal/lsp.png" alt="C with clangd hover docs in Neovim" loading="lazy" />
+              <span>C · clangd</span>
+            </a>
+            <a href="assets/baremetal/hdl.png" class="sv-open" data-src="assets/baremetal/hdl.png">
+              <img src="assets/baremetal/hdl.png" alt="SystemVerilog with verible and verilator lint" loading="lazy" />
+              <span>SystemVerilog · verible + verilator</span>
+            </a>
+            <a href="assets/baremetal/cpu.png" class="sv-open" data-src="assets/baremetal/cpu.png">
+              <img src="assets/baremetal/cpu.png" alt="MNPK-01 control unit in Neovim" loading="lazy" />
+              <span>MNPK-01 · control unit</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="tags"><span>Lua</span><span>Neovim</span><span>Bash</span><span>LSP</span><span>DAP</span><span>Treesitter</span><span>GitHub Actions</span></div>
+
+        <div class="cta">
+          <a class="btn" lang="sk" href="https://github.com/krivanikm/baremetal.nvim/blob/main/README.sk.md" target="_blank" rel="noopener">dokumentácia →</a>
+          <a class="btn" lang="en" href="https://github.com/krivanikm/baremetal.nvim#readme" target="_blank" rel="noopener">documentation →</a>
+          <a class="btn ghost" href="https://github.com/krivanikm/baremetal.nvim" target="_blank" rel="noopener">
+            <span lang="sk">zdrojový kód →</span><span lang="en">source_code →</span>
+          </a>
+        </div>
+      </article>
+
       <ul class="work reveal">
         <li>
-          <span class="n">02</span>
+          <span class="n">03</span>
           <div>
             <h3>8-bit CPU Design From Scratch</h3>
             <p lang="sk">Môj prvý komplexný návrh procesorovej architektúry v simulátore Logisim Evolution. Cieľom bolo pochopiť logiku počítačov od základných hradiel až po inštrukčný cyklus. Obsahuje funkčný 8-bitový register file, program counter a inštrukčný dekodér. Inšpirované prácou Bena Eatera a knihou Code od Charlesa Petzolda.</p>
@@ -406,10 +502,10 @@
 
   <footer>
     <div>© 2026 Matúš Krivánik — Systems &amp; Hardware Developer</div>
-    <div class="mute">v1.5.0-release</div>
+    <div class="mute">v1.6.0-release</div>
   </footer>
 
-  <script src="js/schem.js?v=1.5"></script>
+  <script src="js/schem.js?v=1.6"></script>
   <script>
     // schéma cez celú obrazovku so zoomom
     (function () {
