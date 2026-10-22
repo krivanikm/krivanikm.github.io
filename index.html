@@ -160,10 +160,18 @@
           Obsahuje vlastnú inštrukčnú sadu, procesor v SystemVerilogu overovaný simuláciou vo Verilatore,
           nasadenie na FPGA a vlastnú dosku. Projekt robím ako stredoškolskú odbornú činnosť (SOČ).
         </p>
+        <p class="lede wide" lang="sk">
+          Procesor už <strong>beží na reálnom FPGA</strong> (Tang Nano 9K) a cez I/O mapované do pamäte ovláda LED a číta spínače.
+          Ako skúšku som na ňom spustil výpočet π na 1950 číslic a Mandelbrotovu množinu (tieto dva programy som vytvoril s pomocou AI asistenta Claude).
+        </p>
         <p class="lede wide" lang="en">
           A custom 16-bit microcomputer designed from logic gates up to a physical printed circuit board.
           It covers a custom instruction set, a CPU written in SystemVerilog and verified in Verilator,
           FPGA deployment and a custom board. I am building it as my high-school research project (SOČ).
+        </p>
+        <p class="lede wide" lang="en">
+          The CPU now <strong>runs on a real FPGA</strong> (Tang Nano 9K) and drives LEDs and reads switches through memory-mapped I/O.
+          As a test I ran 1950 digits of π and a Mandelbrot zoom on it (these two programs were made with the help of the AI assistant Claude).
         </p>
 
         <!-- čísla -->
@@ -171,7 +179,7 @@
           <div><b>16<small>bit</small></b><span lang="sk">dátová cesta</span><span lang="en">data path</span></div>
           <div><b>16<small>×16</small></b><span lang="sk">registrov</span><span lang="en">registers</span></div>
           <div><b>14</b><span lang="sk">ALU operácií</span><span lang="en">ALU operations</span></div>
-          <div><b>19<small>/19</small></b><span lang="sk">testov systému</span><span lang="en">system tests pass</span></div>
+          <div><b>24<small>/24</small></b><span lang="sk">testov systému</span><span lang="en">system tests pass</span></div>
           <div><b>39.7<small>M</small></b><span lang="sk">kontrol ALU</span><span lang="en">ALU checks</span></div>
           <div><b>~14<small>%</small></b><span lang="sk">LUT na Tang Nano 9K</span><span lang="en">LUTs on Tang Nano 9K</span></div>
         </div>
@@ -263,9 +271,9 @@
         <div class="road">
           <div class="road-head">
             <h4 class="mini">roadmap</h4>
-            <span class="mono mute">7 / 11</span>
+            <span class="mono mute">9 / 11</span>
           </div>
-          <div class="bar"><span style="width: 64%"></span></div>
+          <div class="bar"><span style="width: 82%"></span></div>
           <ol class="steps">
             <li class="ok">ISA</li>
             <li class="ok">ALU</li>
@@ -274,9 +282,10 @@
             <li class="ok"><span lang="sk">ALU inštrukcia</span><span lang="en">ALU instruction</span></li>
             <li class="ok">JMP + <span lang="sk">podmienky</span><span lang="en">conditions</span></li>
             <li class="ok">LOAD / STORE</li>
-            <li class="wip">I/O · UART</li>
+            <li class="ok">I/O</li>
+            <li class="ok">FPGA</li>
+            <li class="wip">UART</li>
             <li class="todo">assembler</li>
-            <li class="todo">FPGA</li>
             <li class="todo">PCB</li>
           </ol>
         </div>
